@@ -4,28 +4,29 @@
     ViewData["Title"] = "Home Page";
 }
 
-
-<table>
-    <thead>
-        <tr>
-            <th>ID</th>
-            <th>Name</th>
-            <th>Rating</th>
-            <th>Release Year</th>
-            <th>Genre</th>
-        </tr>
-    </thead>
-    <tbody>
+<div>
+    <h2>Movies</h2>
+    <ul>
         @foreach (var movie in Model)
         {
-            <tr>
-                <td>@movie.Id</td>
-                <td ><a href = "/movies/getmovie/@movie.Id" > @movie.Name </a></td>
-                <td>@movie.Rating</td>
-                <td>@movie.ReleaseYear</td>
-                <td>@movie.Genre</td>
-            </tr>
+            <li class="movie-item">
+                <div class="image-container">
+                    <!-- Wrap the image in an anchor tag with the href attribute -->
+                    <a href="@Url.Action("GetMovie", "Movies", new { id = movie.Id })">
+                        <img src="@movie.ImageUrl" alt="Movie Image" />
+                    </a>
+                </div>
+                <div class="movie-details">
+                    <p><a href="/movies/getmovie/@movie.Id">@movie.Name</a></p>
+                    <p>Rating: @movie.Rating</p>
+                    <p>Release Year: @movie.ReleaseYear</p>
+                    <p>Genre: @movie.Genre</p>
+                </div>
+            </li>
         }
-    </tbody>
-</table>
+    </ul>
+</div>
+
+
+
 

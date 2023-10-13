@@ -20,3 +20,69 @@ html {
 body {
   margin-bottom: 60px;
 }
+
+/* Index details design*/
+
+
+/* Style for the movie list item */
+.movie-item {
+    margin-bottom: 20px; /* Adds spacing between movie items */
+    display: flex; /* Use flexbox for alignment */
+}
+
+/* Style for the image container */
+.image-container {
+    text-align: center; /* Centers the image horizontally */
+}
+
+    /* Style for the image itself */
+    .image-container img {
+        max-width: 200px; /* Adjust the maximum width to your preference */
+        height: auto; /* Maintain aspect ratio while resizing */
+        display: block; /* Removes extra space beneath the image */
+        margin: 0 auto; /* Centers the image within the container */
+        filter: blur(5px); /* Apply a blur effect to create a glassy look */
+        transition: filter 0.3s ease-in-out; /* Add a smooth transition effect */
+    }
+
+/* Style for the movie details */
+.movie-details {
+    flex: 1; /* Allow movie details to take remaining space */
+    padding: 10px; /* Add padding for spacing */
+}
+
+    /* Style for the text within the movie details */
+    .movie-details p {
+        margin: 0; /* Remove default margin for paragraphs */
+    }
+
+/* Hover effect to reveal the clear image on hover */
+.movie-item:hover .image-container img {
+    filter: blur(0); /* Remove the blur effect on hover */
+}
+
+/*Movie details design*/
+
+/* Style for the movie details container */
+.movie-details-container-movie {
+    display: flex;
+}
+
+/* Style for the image container */
+.image-container-movie {
+    margin-right: 20px; /* Add spacing between the image and movie details */
+}
+
+    /* Style for the image itself */
+    .image-container-movie img {
+        width: 200px; /* Set a fixed width */
+        height: 300px; /* Set a fixed height */
+        display: block; /* Removes extra space beneath the image */
+        border: 1px solid #ddd; /* Add a subtle border */
+        box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); /* Add a slight shadow */
+        transition: transform 0.2s; /* Add a subtle hover effect */
+    }
+
+        .image-container-movie img:hover {
+            transform: scale(1.05); /* Enlarge the image on hover */
+        }
